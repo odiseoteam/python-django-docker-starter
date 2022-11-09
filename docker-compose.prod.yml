@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    django:
+        restart: always
+
+    nginx:
+        volumes:
+            - /etc/letsencrypt:/etc/letsencrypt:ro
+            - /var/www/certbot:/var/www/certbot:ro
+        restart: always
